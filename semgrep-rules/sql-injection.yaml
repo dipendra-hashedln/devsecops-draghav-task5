@@ -1,0 +1,10 @@
+rules:
+  - id: no-raw-sql
+    patterns:
+      - pattern: conn.execute("SELECT ... " + ...)
+    message: Avoid using raw SQL queries; this can lead to SQL injection
+    severity: ERROR
+    languages: [python]
+    metadata:
+      category: security
+      cwe: "CWE-89: SQL Injection"
